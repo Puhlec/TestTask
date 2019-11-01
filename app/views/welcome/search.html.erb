@@ -1,0 +1,10 @@
+<h3> Results </h3>
+<table>
+  <% @contributors.each do |c| %>
+    <tr>
+      <td>   <%= link_to c.login, c.url %> </td>
+      <td>   <%= link_to "download #{c.login}", download_path("#{c.login}.pdf") %> </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "download zip (#{@contributors.length})", zip_path %>
